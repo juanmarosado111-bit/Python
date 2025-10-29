@@ -6,3 +6,4 @@
 numero=int(input("Introduce un numero: "))
 for num in range(0,numero):
     print("")
+    
