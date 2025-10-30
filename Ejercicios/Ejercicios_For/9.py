@@ -12,11 +12,11 @@
 
 numero=int(input("Introduce un numerero entero: "))
 caracter="*"
-"""
+
 for i in range(0,numero):
     for j in range(0,i+1):
         print(caracter, end="")
-    print("") """
+    print("") 
     
 i=0   
 while i <=numero:
