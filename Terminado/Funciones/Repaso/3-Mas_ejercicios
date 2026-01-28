@@ -1,0 +1,203 @@
+# ---------------------------------------------------------
+# PROGRAMA DE EJERCICIOS DE PYTHON BÁSICO
+# Incluye funciones separadas y menú para elegir cada una.
+# No se usan listas ni estructuras avanzadas.
+# ---------------------------------------------------------
+
+
+# =========================================================
+# 1. CONTAR DÍGITOS DE UN NÚMERO
+# =========================================================
+def contar_digitos():
+    num = int(input("Introduce un número: "))
+    n = abs(num)
+    contador = 1
+
+    while n >= 10:
+        n = n // 10
+        contador = contador + 1
+
+    print("Dígitos:", contador)
+
+
+
+# =========================================================
+# 2. INVERTIR UN NÚMERO (SIN USAR CADENAS)
+# =========================================================
+def invertir_numero():
+    n = int(input("Introduce un número positivo: "))
+    invertido = 0
+
+    while n > 0:
+        resto = n % 10
+        invertido = invertido * 10 + resto
+        n = n // 10
+
+    print("Número invertido:", invertido)
+
+
+
+# =========================================================
+# 3. ADIVINAR EL NÚMERO (5 INTENTOS)
+# =========================================================
+def adivina():
+    secreto = 7
+    intentos = 5
+    i = 0
+
+    while i < intentos:
+        n = int(input("Adivina el número (0-10): "))
+
+        if n == secreto:
+            print("¡Correcto!")
+            return
+        else:
+            print("Incorrecto")
+
+        i = i + 1
+
+    print("Se acabaron los intentos")
+
+
+
+# =========================================================
+# 4. CONTAR NÚMEROS MAYORES QUE EL ANTERIOR
+# =========================================================
+def mayores_seguidos():
+    print("Introduce números (negativo para terminar):")
+    
+    anterior = int(input("Número: "))
+    if anterior < 0:
+        print("No hay datos suficientes")
+        return
+
+    contador = 0
+    actual = int(input("Número: "))
+
+    while actual >= 0:
+        if actual > anterior:
+            contador = contador + 1
+
+        anterior = actual
+        actual = int(input("Número: "))
+
+    print("Cantidad de números mayores que el anterior:", contador)
+
+
+
+# =========================================================
+# 5. POTENCIA SIN USAR **
+# =========================================================
+def potencia():
+    base = int(input("Base: "))
+    exp = int(input("Exponente: "))
+
+    resultado = 1
+    i = 0
+    while i < exp:
+        resultado = resultado * base
+        i = i + 1
+
+    print("Resultado:", resultado)
+
+
+
+# =========================================================
+# 6. CONTAR VOCALES (EN MINÚSCULAS)
+# =========================================================
+def contar_vocales():
+    texto = input("Introduce un texto en minúsculas: ")
+
+    contador = 0
+    i = 0
+    longitud = len(texto)
+
+    while i < longitud:
+        letra = texto[i]
+        if letra == "a" or letra == "e" or letra == "i" or letra == "o" or letra == "u":
+            contador = contador + 1
+        i = i + 1
+
+    print("Vocales:", contador)
+
+
+
+# =========================================================
+# 7. TABLA DE MULTIPLICAR
+# =========================================================
+def tabla():
+    n = int(input("Número: "))
+    i = 1
+    while i <= 10:
+        print(n, "x", i, "=", n * i)
+        i = i + 1
+
+
+
+# =========================================================
+# 8. SI ES PRIMO O NO
+# =========================================================
+def es_primo_func():
+    n = int(input("Introduce un número: "))
+
+    if n <= 1:
+        print("No es primo")
+        return
+
+    i = 2
+    while i < n:
+        if n % i == 0:
+            print("No es primo")
+            return
+        i = i + 1
+
+    print("Es primo")
+
+
+
+# =========================================================
+# MENÚ PRINCIPAL
+# =========================================================
+def menu():
+    opcion = ""
+
+    while opcion != "9":
+        print("\n================ MENÚ ================")
+        print("1. Contar dígitos de un número")
+        print("2. Invertir número")
+        print("3. Adivinar el número")
+        print("4. Contar números mayores que el anterior")
+        print("5. Calcular potencia")
+        print("6. Contar vocales")
+        print("7. Tabla de multiplicar")
+        print("8. Comprobar si es primo")
+        print("9. Salir")
+        print("======================================")
+
+        opcion = input("Elige una opción: ")
+
+        if opcion == "1":
+            contar_digitos()
+        elif opcion == "2":
+            invertir_numero()
+        elif opcion == "3":
+            adivina()
+        elif opcion == "4":
+            mayores_seguidos()
+        elif opcion == "5":
+            potencia()
+        elif opcion == "6":
+            contar_vocales()
+        elif opcion == "7":
+            tabla()
+        elif opcion == "8":
+            es_primo_func()
+        elif opcion == "9":
+            print("Saliendo...")
+        else:
+            print("Opción no válida")
+
+
+
+# Lanzamos el menú
+menu()

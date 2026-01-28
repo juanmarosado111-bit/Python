@@ -9,7 +9,7 @@ os.system("cls")
 numero=int(input("Introduce un numero: "))
 contador=0
 
-print("Bucle While:")
+# print("Bucle While:")
 
 try:
     while contador<=numero:
@@ -25,7 +25,7 @@ finally:
     print("La ejecucion del programa ha finalizado")
 
 
-print("")    
+""" print("")    
 print("-----------------------------------------------------------------------------------")
 print("")
 
@@ -41,5 +41,5 @@ try:
 except Exception as excepcion:
     print(f"Ha habido una excepcion, {excepcion}")
 finally:
-    print("La ejecucion del programa ha finalizado")
+    print("La ejecucion del programa ha finalizado") """
         
